@@ -1,0 +1,23 @@
+package taxCalculator;
+
+public class TaxCalculator {
+	public double getTotalCost(double itemPrice, int itemType) throws Exception  
+	{ 
+		double total=0.0;
+
+		switch(itemType){
+		case 1:
+			total=itemPrice+(itemPrice * 0.01);
+			break;
+		case 2:
+			total=itemPrice+(itemPrice * 0.09);
+			break;
+		default:
+			throw (new Exception("Invalid item type is provided. It should be 1 or 2"));
+			
+		}
+		return total;
+	}
+
+
+}
