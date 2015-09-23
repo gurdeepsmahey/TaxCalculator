@@ -1,0 +1,31 @@
+package taxCalculator;
+
+import org.junit.Test;
+
+public class TaxCalculatorTest {
+TaxCalculator tc= new TaxCalculator();
+	
+	@Test
+	public void testTaxCalculation() throws Exception
+	{
+		assertEquals(tc.getTotalCost(1000,1), 1010.0);
+		assertEquals(tc.getTotalCost(1000,2), 109.0);
+		assertEquals(tc.getTotalCost(0,1), 0.0);  
+	}
+	
+	private void assertEquals(double itemTotalCost, double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Test (expected=Exception.class)
+	public void testTaxCalculationErrorCase() throws Exception
+	{
+		tc.getTotalCost(100,3);
+
+	}
+
+
+
+
+}
